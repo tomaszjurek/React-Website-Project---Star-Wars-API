@@ -13,18 +13,21 @@ class Page extends React.Component {
 
   render() {
     return (
-      <div className = "main-body">
-        <header>{this.props.header}</header>
-        <nav className = "main-menu">{this.props.menu}</nav>
-        <div>
-          <main>{this.props.content}</main>
+      <div className ="flex">
+        <div className = "main-body">
+          <div className = "header-disp">
+            <header>{this.props.header}</header>
+            <nav className = "main-menu">{this.props.menu}</nav>
+          </div>
+          <div className= "main-content">
+            <main>{this.props.content}</main>
+          </div>
+          <footer>{this.props.footer}</footer>
         </div>
-        <footer>{this.props.footer}</footer>
       </div>
-    )
+      )
+    }
   }
-}
-
 
 class App extends React.Component {
 
@@ -32,17 +35,16 @@ class App extends React.Component {
     return (
       <Page
         header = {
-            <h1>Star Wars Galaxy of Information</h1>
+            <p><a href ="#">Star Wars GoI</a></p>
         }
         content = {
             <div>
-                <h1>Witaj na mojej stronie</h1>
+                <h1>Welcome to Star Wars Galaxy of Informations</h1>
                 <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
             </div>
         }
         menu = {
             <ul>
-                <li><a href ="#">Main</a></li>
                 <li><a href ="#">Movies</a></li>
                 <li><a href ="#">Planets</a></li>
                 <li><a href ="#">People</a></li>
