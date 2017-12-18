@@ -46,6 +46,13 @@ html {
         }
         .main-content {
           padding: 5px 8px;
+          display: flex;
+          flex-wrap: wrap;
+          section {
+            flex-grow: 1;
+            width: 500px;
+            padding: 0px 25px;
+          }
         }
       }
     }

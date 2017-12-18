@@ -1,5 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  Router,
+  Route,
+  Link,
+  IndexLink,
+  IndexRoute,
+  hashHistory
+} from "react-router";
 
 
 class Page extends React.Component {
@@ -20,7 +28,8 @@ class Page extends React.Component {
             <nav className = "main-menu">{this.props.menu}</nav>
           </div>
           <div className= "main-content">
-            <main>{this.props.content}</main>
+            <section>{this.props.content}</section>
+            <section>{this.props.content}</section>
           </div>
           <footer>{this.props.footer}</footer>
         </div>
@@ -40,7 +49,7 @@ class App extends React.Component {
         content = {
             <div>
                 <h1>Welcome to Star Wars Galaxy of Informations</h1>
-                <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
+                <article>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </article>
             </div>
         }
         menu = {

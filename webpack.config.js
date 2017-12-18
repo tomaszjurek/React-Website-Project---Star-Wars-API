@@ -17,5 +17,10 @@ module.exports = {
         }
       }
     ]
+  },
+  devServer: {
+    contentBase: './',
+    port: 3001,
+    inline: true
   }
 }
