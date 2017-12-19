@@ -8,70 +8,41 @@ import {
   IndexRoute,
   hashHistory
 } from "react-router";
-
-
-class Page extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isData: false,
-      data: {}
-    };
-  }
-
-  render() {
-    return (
-      <div className ="flex">
-        <div className = "main-body">
-          <div className = "header-disp">
-            <header>{this.props.header}</header>
-            <nav className = "main-menu">{this.props.menu}</nav>
-          </div>
-          <div className= "main-content">
-            <section>{this.props.content}</section>
-            <section>{this.props.content}</section>
-          </div>
-          <footer>{this.props.footer}</footer>
-        </div>
-      </div>
-      )
-    }
-  }
+import Template from './components/template.jsx'
+import Main from './components/main.jsx'
+import Movies from './components/movies.jsx'
+import Planets from './components/planets.jsx'
+import People from './components/people.jsx'
+import Species from './components/species.jsx'
+import Starships from './components/starships.jsx'
+import Vehicles from './components/vehicles.jsx'
+import Quiz from './components/quiz.jsx'
 
 class App extends React.Component {
 
   render() {
     return (
-      <Page
-        header = {
-            <p><a href ="#">Star Wars GoI</a></p>
-        }
-        content = {
-            <div>
-                <h1>Welcome to Star Wars Galaxy of Informations</h1>
-                <article>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </article>
-            </div>
-        }
-        menu = {
-            <ul>
-                <li><a href ="#">Movies</a></li>
-                <li><a href ="#">Planets</a></li>
-                <li><a href ="#">People</a></li>
-                <li><a href ="#">Species</a></li>
-                <li><a href ="#">Starships</a></li>
-                <li><a href ="#">Vehicles</a></li>
-            </ul>
-        }
-        footer = {
-            <p>&copy; 2017 Tomasz O</p>
-        }/>
+      <Router history = {hashHistory}>
+        <Route path = "/" component = {Template}>
+          <IndexRoute component = {Main}/>
+          <Route path = "movies" component = {Movies}></Route>
+          <Route path = "planets" component = {Planets}></Route>
+          <Route path = "people" component = {People}></Route>
+          <Route path = "species" component = {Species}></Route>
+          <Route path = "starships" component = {Starships}></Route>
+          <Route path = "vehicles" component = {Vehicles}></Route>
+          <Route path = "quiz" component = {Quiz}></Route>
+        </Route>
+        <Route path = "*" component = {Error}></Route>
+      </Router>
     );
   }
 
 }
 
-
-ReactDOM.render(
-  <App/>,
-  document.getElementById('app')
-);
+document.addEventListener('DOMContentLoaded', function(){
+  ReactDOM.render(
+    <App/>,
+    document.getElementById('app')
+  );
+});

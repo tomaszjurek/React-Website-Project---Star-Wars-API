@@ -1,60 +1,28 @@
 $bodyColor: 	#0F1827;
+$textColor: #9D9841;
 
-html {
-  height: 100%;
+body {
+  background-color: lighten($bodyColor,20%);
+  font-family: 'Boogaloo';
+  color: white;
+}
 
-  body {
-    background-color: $bodyColor;
-    font-family: 'Boogaloo';
-    height: 100%;
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background-color: $textColor;
+}
 
-    .flex {
-      display: flex;
-      height: 100%;
-      justify-content: center;
-
-      .main-body {
-        color: lighten(grey,40%);
-        width: 1200px;
-        background-color: lighten($bodyColor,10%);
-
-        .header-disp {
-          justify-content: space-between;
-          flex-grow: 1;
-          display: flex;
-          background-color:  lighten($bodyColor,20%);
-          padding: 5px 8px;
-          header {
-            a {
-              color: #E8E75E;
-              text-decoration: none;
-            }
-          }
-          nav {
-            li {
-              display: inline-block;
-              padding-left: 10px;
-            }
-            a {
-              text-decoration: none;
-              color: #9D9841;
-              &:hover {
-                color: #E8E75E;
-              }
-            }
-          }
-        }
-        .main-content {
-          padding: 5px 8px;
-          display: flex;
-          flex-wrap: wrap;
-          section {
-            flex-grow: 1;
-            width: 500px;
-            padding: 0px 25px;
-          }
-        }
-      }
-    }
+.nav-link {
+  color: #E8E75E;
+  &:hover {
+    background-color: $textColor;
+    color: white;
   }
+}
+
+.content-color {
+  background-color: lighten($bodyColor,15%);
+}
+
+hr {
+  margin-top: 0;
 }
