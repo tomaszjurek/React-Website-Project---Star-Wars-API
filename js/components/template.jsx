@@ -26,7 +26,7 @@ class Template extends React.Component {
           </ul>
         </header>
       <hr/>
-        <div className="row justify-content-center content-color">
+        <div className="row content">
           {this.props.children}
         </div>
       </div>

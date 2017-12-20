@@ -7,22 +7,67 @@ body {
   color: white;
 }
 
+// Menu
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
   background-color: $textColor;
 }
 
 .nav-link {
   color: #E8E75E;
+  font-size: 20px;
   &:hover {
     background-color: $textColor;
     color: white;
   }
 }
 
-.content-color {
-  background-color: lighten($bodyColor,15%);
-}
-
 hr {
   margin-top: 0;
+}
+
+// Content
+.content {
+  background-color: lighten($bodyColor,15%);
+  padding: 40px 80px;
+  margin: 10px 50px;
+}
+
+.error {
+  border: 2px $textColor solid;
+  margin: 0 auto;
+  height: 50%;
+  width: 50%;
+}
+
+.contentItem {
+  background-color: lighten($bodyColor,25%);
+  padding: 15px 25px;
+  margin-bottom: 30px;
+  h2 {
+    color: #E8E75E;
+  }
+  .opening {
+    padding: 15px 25px;
+    font-size: 20px;
+  }
+}
+
+.directorProducer {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+// Quiz
+.question {
+  background-color: lighten($bodyColor,25%);
+  padding: 15px 25px;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.lightsaber {
+  border-radius: 0 5px 5px 0;
+  width: 318.5px;
+  text-align: center;
+  color: black
 }

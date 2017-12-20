@@ -17,9 +17,9 @@ import Species from './components/species.jsx'
 import Starships from './components/starships.jsx'
 import Vehicles from './components/vehicles.jsx'
 import Quiz from './components/quiz.jsx'
+import Error from './components/error.jsx'
 
 class App extends React.Component {
-
   render() {
     return (
       <Router history = {hashHistory}>

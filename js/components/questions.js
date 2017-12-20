@@ -1,92 +1,102 @@
 module.exports = [
 {
-  question: "?",
+  question: "What year did the Empire Strikes Back came out?",
   answers: {
-    a: "",
-    b: "",
-    c: ""
+    a: "1982",
+    b: "1980",
+    c: "1977"
   },
-  correctAnswer: "c"
+  correctAnswer: "1b",
+  id: 1
 },
 {
-  question: "?",
+  question: "What kind of specie is Chewbacca?",
   answers: {
-    a: "",
-    b: "",
-    c: ""
+    a: "Trandoshian",
+    b: "Droid",
+    c: "Wookie"
   },
-  correctAnswer: "c"
+  correctAnswer: "2c",
+  id: 2
 },
 {
-  question: "?",
+  question: "Which model is Millenium Falcon?",
   answers: {
-    a: "",
-    b: "",
-    c: ""
+    a: "BTL Y-Wing",
+    b: "YT-1300 Light Freighter",
+    c: "Executor-Class Star Dreadnought"
   },
-  correctAnswer: "c"
+  correctAnswer: "3b",
+  id: 3
 },
 {
-  question: "?",
+  question: "Who is Luke's father?",
   answers: {
-    a: "",
-    b: "",
-    c: ""
+    a: "Obi-Wan Kenobi",
+    b: "Anakin Skywalker",
+    c: "R2-D2"
   },
-  correctAnswer: "c"
+  correctAnswer: "4b",
+  id: 4
 },
 {
-  question: "?",
+  question: "How fast the Millenium Falcon completed the Kessel Run?",
   answers: {
-    a: "",
-    b: "",
-    c: ""
+    a: "14 parsecs",
+    b: "more than 18 parsecs",
+    c: "less then 12 parsecs"
   },
-  correctAnswer: "c"
+  correctAnswer: "5c",
+  id: 5
 },
 {
-  question: "?",
+  question: "In which movie Anakin Skywalker became a member of the Jedi Council?",
   answers: {
-    a: "",
-    b: "",
-    c: ""
+    a: "Episode III The Revenge of The Sith",
+    b: "Episode I The Phantom Menace",
+    c: "Episode II Attack of the Clones"
   },
-  correctAnswer: "c"
+  correctAnswer: "6a",
+  id: 6
 },
 {
-  question: "?",
+  question: "How old was Yoda when he died?",
   answers: {
-    a: "",
-    b: "",
-    c: ""
+    a: "90 years old",
+    b: "700 years old",
+    c: "900 years old"
   },
-  correctAnswer: "c"
+  correctAnswer: "7c",
+  id: 7
 },
 {
-  question: "?",
+  question: "In Return of the Jedi, Battle of Yavin was in year?",
   answers: {
-    a: "",
-    b: "",
-    c: ""
+    a: "1922 BBY",
+    b: "0 BBY",
+    c: "19 ABY"
   },
-  correctAnswer: "c"
+  correctAnswer: "8b",
+  id: 8
 },
 {
-  question: "?",
+  question: "What was first destroyed by the Death Star?",
   answers: {
-    a: "",
-    b: "",
-    c: ""
+    a: "Jedha City",
+    b: "planet Alderaan",
+    c: "Citadel on Scarif"
   },
-  correctAnswer: "c"
+  correctAnswer: "9a",
+  id: 9
 },
 {
-  question: "?",
+  question: "In which Star Wars movie C-3PO had a red arm?",
   answers: {
-    a: "",
-    b: "",
-    c: ""
+    a: "Episode IV A New Hope",
+    b: "Episode I The Phantom Menace",
+    c: "Episode VII The Force Awakens"
   },
-  correctAnswer: "c"
+  correctAnswer: "10c",
+  id: 10
 }
 ];
