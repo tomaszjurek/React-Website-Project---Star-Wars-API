@@ -52,9 +52,36 @@ hr {
   }
 }
 
-.directorProducer {
+.directorProducer, .planets {
   margin: 0 10px;
   display: inline-block;
+  .titleColor {
+    color: $textColor;
+  }
+}
+
+.contentPlanet {
+  background-color: lighten($bodyColor,25%);
+  padding: 15px 25px;
+  margin-bottom: 30px;
+  margin-right: 10px;
+  width: 250px;
+  height: 300px;
+  float: left;
+  h2 {
+    color: #E8E75E;
+  }
+  .opening {
+    padding: 15px 25px;
+    font-size: 20px;
+  }
+}
+
+.clearfix::before, .clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  margin-bottom: 10px;
 }
 
 // Quiz

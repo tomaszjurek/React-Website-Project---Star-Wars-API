@@ -6,6 +6,7 @@ class Movies extends React.Component {
     super(props);
     this.state = {
       isData: false,
+      filterText: "",
       data: {}
     };
   }
@@ -18,31 +19,48 @@ class Movies extends React.Component {
         console.log('Błąd połączenia!');
       }
     }).then(data => {
-      console.log(data.results);
+      let sortedData = data.results
+      sortedData.sort(function(a, b) {
+        return a.episode_id - b.episode_id;
+      })
+      console.log(sortedData);
       this.setState({
         isData: true,
-        data: data.results
+        data: sortedData
       })
+    })
+  }
+
+  changeText = () => {
+    this.setState({
+      filterText: this.input.value
     })
   }
 
   render() {
     return this.state.isData ? (
       <div className= "container">
-        <h1>Movies</h1>
+        <div>
+          <h1>Movies</h1>
+          <input style = {{marginBottom: "10px"}} ref ={inputDOM => this.input = inputDOM} type ="text"
+              placeholder ="Search title..." onChange = {this.changeText}/>
+        </div>
           {
             this.state.data.map(element => {
+              if (element.title.toUpperCase().indexOf(this.state.filterText.toUpperCase()) > -1) {
               return (
                 <div key = {element.episode_id} className= "contentItem justify-content-center">
                   <h2>Episode {element.episode_id} {element.title}</h2>
-                  <h3 className = "directorProducer">Director: {element.director}</h3>
-                  <h3 className = "directorProducer">Producer: {element.producer}</h3>
-                  <h3 className = "directorProducer">Release Date: {element.release_date}</h3>
+                  <h3 className = "directorProducer">
+                    <span className = "titleColor">Director:</span> {element.director}</h3>
+                  <h3 className = "directorProducer">
+                    <span className = "titleColor">Producer:</span> {element.producer}</h3>
+                  <h3 className = "directorProducer">
+                    <span className = "titleColor">Release Date:</span> {element.release_date}</h3>
                   <p className = "opening">{element.opening_crawl}</p>
-
-
                 </div>
               )
+            }
             })
           }
       </div>
