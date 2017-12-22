@@ -1,36 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
-
-class Planet extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      filterText: ""
-    };
-  }
-
-  changeText = () => {
-    this.setState ({
-      filterText: this.input.value
-    }, () => {
-        this.props.changeTextValue(this.state.filterText);})
-  }
-
-  render() {
-    return (
-      <div>
-        <span className = "planets">
-          <span className = "titleColor">Climate:</span> {this.props.element.climate}</span>
-        <span className = "planets">
-          <span className = "titleColor">Population:</span> {this.props.element.population}</span>
-        <span className = "planets">
-          <span className = "titleColor">Diameter:</span> {this.props.element.diameter}</span>
-        <span className = "planets">
-          <span className = "titleColor">Surface water:</span> {this.props.element.surface_water + "%"}</span>
-      </div>
-    )
-  }
-}
+import Loading from './loading.jsx'
 
 class Planets extends React.Component {
   constructor(props) {
@@ -52,7 +21,6 @@ class Planets extends React.Component {
       })
     }
   }
-
 
   nextPage = () => {
     this.setState({
@@ -85,6 +53,7 @@ class Planets extends React.Component {
     this.setState({
       filterText: this.input.value
     })
+    this.input.value = "";
   }
 
   render() {
@@ -92,15 +61,17 @@ class Planets extends React.Component {
       <div className= "container">
         <div>
           <h1>Planets</h1>
-          <input style = {{marginBottom: "10px"}} ref ={inputDOM => this.input = inputDOM} type ="text"
-            placeholder ="Search planet..." onChange = {this.changeText}/>
+          <input className = "search-input" style = {{marginBottom: "10px"}} ref ={inputDOM => this.input = inputDOM} type ="text"
+            placeholder ="Search planet..."/>
+            <button className = "search-button" onClick = {this.changeText}>Search</button>
         </div>
         <div className = "clearfix">
           {
-            this.state.page > 1 && <button onClick = {this.previousPage}>Previous</button>
+            this.state.page > 1 && <button className = "button-style" onClick = {this.previousPage}>Previous</button>
           }
+          <span style = {{borderRadius: 0, fontSize: "25px", padding: "0 5px", margin: "0 10px"}}>{this.state.page}</span>
           {
-            this.state.page < 4 && <button onClick = {this.nextPage}>Next</button>
+            this.state.page < 4 && <button className = "button-style" onClick = {this.nextPage}>Next</button>
           }
         </div>
           {
@@ -109,7 +80,29 @@ class Planets extends React.Component {
                 return (
                   <div key = {element.name} className = "contentPlanet justify-content-center">
                     <h2>{element.name}</h2>
-                    <Planet element = {element}/>
+                    <span className = "planets">
+                      <span className = "titleColor">Climate:</span> {element.climate}</span>
+
+                    <span className = "planets">
+                      <span className = "titleColor">Population:</span> {element.population}</span>
+
+                    <span className = "planets">
+                      <span className = "titleColor">Diameter:</span> {element.diameter + " km"}</span>
+
+                    <span className = "planets">
+                      <span className = "titleColor">Surface water:</span> {element.surface_water + " %"}</span>
+
+                    <span className = "planets">
+                      <span className = "titleColor">Rotation period:</span> {element.rotation_period + " h"}</span>
+
+                    <span className = "planets">
+                      <span className = "titleColor">Orbital period:</span> {element.orbital_period + " h"}</span>
+
+                    <span className = "planets">
+                      <span className = "titleColor">Terrain:</span> {element.terrain}</span>
+
+                    <span className = "planets">
+                      <span className = "titleColor">Gravity:</span> {element.gravity}</span>
                   </div>
                 )
               }
@@ -117,21 +110,16 @@ class Planets extends React.Component {
           }
           <div className = "clearfix">
             {
-              this.state.page > 1 && <button onClick = {this.previousPage}>Previous</button>
+              this.state.page > 1 && <button className = "button-style" onClick = {this.previousPage}>Previous</button>
             }
+            <span style = {{borderRadius: 0, fontSize: "25px", padding: "0 5px", margin: "0 10px"}}>{this.state.page}</span>
             {
-              this.state.page < 7 && <button onClick = {this.nextPage}>Next</button>
+              this.state.page < 7 && <button className = "button-style" onClick = {this.nextPage}>Next</button>
             }
           </div>
       </div>
     ) : (
-      <div className= "container">
-        <h1>Planets</h1>
-        <div className= "contentItem justify-content-center">
-          <img className = "img-fluid" src = "https://i.imgur.com/qvbAYu8.gif"></img>
-        </div>
-      </div>
-
+      <Loading/>
     );
   }
 }

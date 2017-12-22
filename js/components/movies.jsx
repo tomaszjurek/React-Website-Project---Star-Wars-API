@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import Loading from './loading.jsx'
 
 class Movies extends React.Component {
   constructor(props) {
@@ -32,18 +32,21 @@ class Movies extends React.Component {
   }
 
   changeText = () => {
-    this.setState({
-      filterText: this.input.value
-    })
+      this.setState({
+        filterText: this.input.value
+      })
+      this.input.value = "";
   }
+
 
   render() {
     return this.state.isData ? (
       <div className= "container">
         <div>
           <h1>Movies</h1>
-          <input style = {{marginBottom: "10px"}} ref ={inputDOM => this.input = inputDOM} type ="text"
-              placeholder ="Search title..." onChange = {this.changeText}/>
+          <input className = "search-input" style = {{marginBottom: "10px"}} ref ={inputDOM => this.input = inputDOM} type ="text"
+              placeholder ="Search title..."/>
+              <button className = "search-button" onClick = {this.changeText}>Search</button>
         </div>
           {
             this.state.data.map(element => {
@@ -65,13 +68,7 @@ class Movies extends React.Component {
           }
       </div>
     ) : (
-      <div className= "container">
-        <h1>Movies</h1>
-        <div className= "contentItem justify-content-center">
-          <img className = "img-fluid" src = "https://i.imgur.com/qvbAYu8.gif"></img>
-        </div>
-      </div>
-
+      <Loading/>
     );
   }
 }

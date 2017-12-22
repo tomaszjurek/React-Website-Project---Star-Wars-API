@@ -25,7 +25,7 @@ class App extends React.Component {
       <Router history = {hashHistory}>
         <Route path = "/" component = {Template}>
           <IndexRoute component = {Main}/>
-          <Route path = "movies" component = {Movies}></Route>
+          <Route changeText = {this.changeText} path = "movies" component = {Movies}></Route>
           <Route path = "planets" component = {Planets}></Route>
           <Route path = "people" component = {People}></Route>
           <Route path = "species" component = {Species}></Route>

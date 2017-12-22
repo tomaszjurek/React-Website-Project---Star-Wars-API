@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import Loading from './loading.jsx'
 
 class Species extends React.Component {
   constructor(props) {
@@ -53,24 +53,27 @@ class Species extends React.Component {
     this.setState({
       filterText: this.input.value
     })
+    this.input.value = "";
   }
 
   render() {
     return this.state.isData ? (
       <div className= "container">
         <div>
-        <h1>Species</h1>
-        <input style = {{marginBottom: "10px"}} ref ={inputDOM => this.input = inputDOM} type ="text"
-            placeholder ="Search specie..." onChange = {this.changeText}/>
-          </div>
-          <div className = "clearfix">
-            {
-              this.state.page > 1 && <button onClick = {this.previousPage}>Previous</button>
-            }
-            {
-              this.state.page < 4 && <button onClick = {this.nextPage}>Next</button>
-            }
-          </div>
+          <h1>Species</h1>
+          <input className = "search-input" style = {{marginBottom: "10px"}} ref ={inputDOM => this.input = inputDOM} type ="text"
+            placeholder ="Search specie..."/>
+            <button className = "search-button" onClick = {this.changeText}>Search</button>
+        </div>
+        <div className = "clearfix">
+          {
+            this.state.page > 1 && <button className = "button-style" onClick = {this.previousPage}>Previous</button>
+          }
+          <span style = {{borderRadius: 0, fontSize: "25px", padding: "0 5px", margin: "0 10px"}}>{this.state.page}</span>
+          {
+            this.state.page < 4 && <button className = "button-style" onClick = {this.nextPage}>Next</button>
+          }
+        </div>
           {
             this.state.data.map(element => {
               if (element.name.toUpperCase().indexOf(this.state.filterText.toUpperCase()) > -1 ||
@@ -99,21 +102,16 @@ class Species extends React.Component {
           }
           <div className = "clearfix">
             {
-              this.state.page > 1 && <button onClick = {this.previousPage}>Previous</button>
+              this.state.page > 1 && <button className = "button-style" onClick = {this.previousPage}>Previous</button>
             }
+            <span style = {{borderRadius: 0, fontSize: "25px", padding: "0 5px", margin: "0 10px"}}>{this.state.page}</span>
             {
-              this.state.page < 4 && <button onClick = {this.nextPage}>Next</button>
+              this.state.page < 4 && <button className = "button-style" onClick = {this.nextPage}>Next</button>
             }
           </div>
       </div>
     ) : (
-      <div className= "container">
-        <h1>Species</h1>
-        <div className= "contentItem justify-content-center">
-          <img className = "img-fluid" src = "https://i.imgur.com/qvbAYu8.gif"></img>
-        </div>
-      </div>
-
+      <Loading/>
     );
   }
 }
