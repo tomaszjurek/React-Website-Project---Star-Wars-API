@@ -12,9 +12,13 @@ npm install --production
 ```
 
 ### Running
-To run the website
+To open the website you need to run react-server
 ```
-
+node_modules/.bin/webpack-dev-server --hot
+```
+then open in browser
+```
+http://localhost:3001
 ```
 
 ## Built With
