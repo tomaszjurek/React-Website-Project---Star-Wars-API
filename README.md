@@ -18,10 +18,11 @@ To run the website
 ```
 
 ## Built With
-* HTML
-* CSS3
+* HTML 5
+* CSS 3
 * SCSS
 * JavaScript ES6
 * React
+* Bootstrap 4
 * Webpack
 * Gulp
