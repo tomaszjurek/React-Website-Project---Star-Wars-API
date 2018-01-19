@@ -3,7 +3,7 @@ My final project, which is built on React. It's a website where You can find use
 
 ## Live preview
 ```
-https://tomaszjurek.github.io/React-Website-Project---Star-Wars-API/
+[https://tomaszjurek.github.io/React-Website-Project---Star-Wars-API/]
 ```
 
 ## Getting Started
